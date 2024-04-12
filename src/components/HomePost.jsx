@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom"
 
-const HomePost = (post) => {
+const HomePost = (post, author) => {
     return <>
         <h2>{post.title}</h2>
         <p>{post.body}</p>
-        <p>By: {post.userId}</p>
+        <p className="author">By: {author.email}</p>
         <NavLink to={`/post/${post.id}`}>More</NavLink>
     </>
 }

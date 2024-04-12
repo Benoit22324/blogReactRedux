@@ -52,6 +52,12 @@
   font-weight: bold;
 }
 
+.comment_form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0.5em;
+}
 .post_form {
   display: flex;
   flex-direction: column;
@@ -63,14 +69,17 @@
   gap: 10px;
 }
 .post_form input,
-.post_form textarea {
+.post_form textarea,
+.comment_input {
   padding: 0.2em;
   border-radius: 5px;
 }
-.post_submit {
+.post_submit,
+.comment_submit {
   background-color: rgb(97, 97, 97);
 }
-.post_submit:hover {
+.post_submit:hover,
+.comment_submit:hover {
   background-color: rgb(126, 126, 126);
 }
 
@@ -83,4 +92,12 @@
   padding: 0.2em;
   background-color: #686868;
   border-radius: 15px;
+}
+
+.comment {
+  border-top: 1px solid rgb(194, 194, 194);
+}
+.comment p:last-child,
+.author {
+  font-weight: bold;
 }

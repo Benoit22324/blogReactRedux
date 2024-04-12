@@ -1,27 +1,21 @@
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { selectComments, selectLoadingMsg, selectStatut } from '../store/selector/comment';
-import { useEffect } from 'react';
-import { fetchComments } from '../store/reducer/CommentReducer';
 
 const PostComList = ({id}) => {
-    const dispatch = useDispatch();
     const comlist = useSelector(selectComments);
     const statut = useSelector(selectStatut);
     const loadingmsg = useSelector(selectLoadingMsg);
-    console.log(comlist)
 
-    useEffect(() => {
-        dispatch(fetchComments(id))
-    }, [])
+    const thiscom = comlist.filter((com) => com.postId === id);
 
     return <>
         {
             statut === 'searching' && <p>{loadingmsg}</p>
         }
         {
-            comlist.length > 0 ?
-            comlist.map((comment) =>
-            <div>
+            thiscom.length > 0 ?
+            thiscom.map((comment, index) =>
+            <div key={index} className='comment'>
                 <p>{comment.body}</p>
                 <p>From {comment.email}</p>
             </div>)

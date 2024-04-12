@@ -1,18 +1,22 @@
 import './App.css'
+import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import Home from './pages/Home'
 import AddPost from './pages/AddPost'
-import NavBar from './components/NavBar'
-import { useEffect } from 'react'
-import { fetchPosts } from './store/reducer/PostReducer'
 import Post from './pages/Post'
+import NavBar from './components/NavBar'
+import { fetchPosts } from './store/reducer/PostReducer'
+import { fetchUsers } from './store/reducer/UsersReducer'
+import { fetchComments } from './store/reducer/CommentReducer'
 
 function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchPosts())
+    dispatch(fetchPosts());
+    dispatch(fetchUsers());
+    dispatch(fetchComments());
   }, [])
 
   return (

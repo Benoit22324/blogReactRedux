@@ -20,6 +20,7 @@ const PostReducer = createSlice({
     name: 'post',
     initialState: {
         posts: [],
+        id: 101,
         title: '',
         content: '',
         errmsg: '',
@@ -45,8 +46,9 @@ const PostReducer = createSlice({
             state.statut = 'idle'
         })
         builder.addCase(addPost.fulfilled, (state, action) => {
-            state.posts.push(action.payload)
+            state.posts.push({...action.payload, id: state.id})
             state.statut = 'idle'
+            state.id++
             state.title = ''
             state.content = ''
         })
