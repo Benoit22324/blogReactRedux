@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { selectPosts } from '../../store/selector/post';
+import PostComList from '../../components/PostComList';
 
 const Post = () => {
     const {id} = useParams();
@@ -12,6 +13,7 @@ const Post = () => {
         <p>{post.body}</p>
         <p>By: {post.userId}</p>
         <h2>Comments</h2>
+        <PostComList id={post.id} />
     </>
 }
 
