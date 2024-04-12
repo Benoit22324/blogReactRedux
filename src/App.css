@@ -40,3 +40,47 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Personal Corner */
+.Navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+.errormsg {
+  color: rgb(190, 0, 0);
+  font-weight: bold;
+}
+
+.post_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.post_form label {
+  display: flex;
+  gap: 10px;
+}
+.post_form input,
+.post_form textarea {
+  padding: 0.2em;
+  border-radius: 5px;
+}
+.post_submit {
+  background-color: rgb(97, 97, 97);
+}
+.post_submit:hover {
+  background-color: rgb(126, 126, 126);
+}
+
+.home_postlist {
+  width: 70%;
+  margin: auto;
+}
+.home_post {
+  margin: 0.5em 0;
+  padding: 0.2em;
+  background-color: #686868;
+  border-radius: 15px;
+}
